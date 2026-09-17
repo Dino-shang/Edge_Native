@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Edge NM Automation",
+  "version": "0.1.0",
+  "description": "Native Messaging bridge for Python-driven DOM automation (no CDP/Selenium/Playwright).",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnOB+QNrBB0/otGy9HjpCVocgZgUO6Kne+NwTukqnEy6yPttzibXfQ6sfP3YR+J+7F0kQKBnljGk2LXv28g3eH3XZRZAqUn1v0/xf5X3OiEjQnrbjWtA+QrIUiI1rIl2bPntSDgMYJBcO24U+cOEp90J2D5FhJDnJbNGbASZvW6i3jUgEKVwD/wAqBsBUypWmsM2RiZ4nK95qr1Kw+9WKzTTCk6xH96vLZWcYc8O/4hWm/rUHynLSrUT3VJr1VKvix3g58hC8GipxnY34VcBnwpZgZg8eTQD6u6pv3LWUCy3XpzpQcUrYNgBTEpwlg3ozn11DsJaYr1YkjHgEGG74jwIDAQAB",
+  "permissions": [
+    "nativeMessaging",
+    "tabs",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Edge NM Automation",
+    "default_popup": "popup.html"
+  }
+}

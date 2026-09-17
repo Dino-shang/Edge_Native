@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Edge NM</title>
+    <style>
+      body {
+        font-family: Segoe UI, sans-serif;
+        margin: 12px;
+        min-width: 280px;
+        color: #1a1a1a;
+      }
+      h1 { font-size: 14px; margin: 0 0 8px; }
+      .row { font-size: 12px; margin: 4px 0; }
+      .ok { color: #0a7a32; }
+      .bad { color: #b00020; }
+      code { font-size: 11px; }
+      pre {
+        white-space: pre-wrap;
+        font-size: 11px;
+        opacity: 0.9;
+        margin-top: 8px;
+        background: #f4f4f4;
+        padding: 8px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edge NM Automation</h1>
+    <div class="row" id="status">Checking…</div>
+    <div class="row">Host: <code>com.example.edge_nm</code></div>
+    <div class="row">Extension ID: <code id="extId">…</code></div>
+    <pre id="detail"></pre>
+    <script src="popup.js"></script>
+  </body>
+</html>
